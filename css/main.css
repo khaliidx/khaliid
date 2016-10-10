@@ -168,7 +168,7 @@ pre {
 }
 
 .header-bg {
-  background: url("/website/images/header.jpg") no-repeat center center;
+  background: url("/images/header.jpg") no-repeat center center;
   height: 480px;/*530px*/
   width:100%;
   background-size: cover !important;
