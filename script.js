@@ -5,7 +5,7 @@ function loadXMLDoc() {
       myFunction(this);
     }
   };
-  xmlhttp.open("GET", "../posts.xml?id="+Math.random(), false);
+  xmlhttp.open("GET", "posts.xml?id="+Math.random(), false);
   xmlhttp.send();
 }
 
