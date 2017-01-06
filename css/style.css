@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Cantarell|Lato|Rokkitt|Vollkorn');
+
+body {
+  font: 300 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+}
+
+
+#mapholder
+{
+	border: solid 1px #CCC; 
+	border-radius: 5px;
+}
+
+nav[class="uk-navbar"] > img[class="uk-visible-small"]
+{
+	max-width: 30px; 
+	margin-left: 15px;
+}
+
+.uk-navbar-nav > li > a{
+	color:white;
+}
+
+a[class="uk-navbar-brand uk-block-secondary uk-padding-remove uk-hidden-small"] > img
+{
+	max-height:35px; 
+	max-width:30px; 
+	margin-left: 15px;
+}
+
+.uk-grid{
+  max-width: -webkit-calc(980px - (15px * 2));
+  max-width: calc(980px - (15px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px;
+
+}
+
+.footer-container{
+  max-width: -webkit-calc(980px - (15px * 2));
+  max-width: calc(980px - (15px * 2));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.contact,.liens,.follow{
+  	list-style: none;
+}
+
+
+.icon--email > svg {
+	display: inline-block;
+  	width: 30px;
+  	height: 30px;
+  	vertical-align: middle; 
+}
+
+.icon--twitter,.icon--facebook > svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle; }
+  .icon > svg path {
+    fill: #828282; }
+
+.uk-dropdown{
+	background-color:#333;
+	color:#FFF;
+}
+
+nav[class="uk-navbar"]{
+	background-color: #FFF;
+}
+
+@media screen and (max-width: 980px) 
+{
+    .uk-grid{
+      max-width: -webkit-calc(980px - (15px));
+      max-width: calc(980px - (15px));
+      padding-right: 15px;
+      padding-left: 15px; } 
+}
+
+
+@media screen and (max-width: 875px) and (min-width: 768px)
+ {
+	 
+.contact > li > a, .liens > li > a
+{
+	font-size:80%;
+}
+#mapholder
+{
+	height: 400px !important;
+	width: 350px !important;
+}
+ 
+}
+
+  @media screen and (max-width: 650px)
+ {
+	 
+h1[class="uk-h2 uk-text-center"]
+{
+	font-size: 105%;
+	font-weight: 700;
+}
+div[class="uk-dropdown uk-dropdown-autoflip uk-dropdown-top"] > dl > dt > a
+{
+	font-size: 89%;
+	
+	line-height: 30px;
+
+}
+
+#mapholder
+{
+	height: 400px !important;
+	width: 400px !important;
+}
+
+ }

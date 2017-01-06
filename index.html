@@ -1,159 +1,548 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Cache-control" content="No-Cache">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Bungee|Bungee+Shade" rel="stylesheet"> 
-  <link rel="stylesheet" href="css/main.css">
-  <script src="script.js"></script> 
-   
-  <title>KoreTex</title>
+	<title>IADO</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/uikit.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="images/logo-menu.png">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <!-- bibliothéque pour le sidershow-->
+    <link href="css/components/slideshow.min.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" rel="alternate stylesheet" href="css/components/slideshow.almost-flat.css" />
+	<link type="text/css" rel="alternate stylesheet" href="css/components/slideshow.gradient.css" />
+	<script src="js/components/slideshow-fx.min.js"></script>
+	<script src="js/components/slideshow.min.js"></script>
+    
+    <link href="css/components/slidenav.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/components/slidenav.almost-flat.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/components/slidenav.gradient.min.css" rel="stylesheet" type="text/css" />
 
-
+	 <!--bibliothéque pour géolocalisation-->
+     <script src="js/geo.js"></script>
+	 <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    
 </head>
 
 
-<body onload="loadXMLDoc()">
+<body background="images/grey.png">
 
 
+<header class="uk-container uk-container-center">
 
-    <header class="site-header">
-      <div class="header-wrapper">
+	<header class="uk-cover-background">
+    <img src="images/fsr.png" class="uk-align-center">
+	</header>
 
-      <a class="site-title" href="#">KoreTex</a>
-      <nav class="site-nav">
-
-          <a class="page-link" href="#">About</a>
-          <a class="page-link" href="#">Sign In</a>
-          <a class="page-link" href="#">Sign Up</a>
-
-      </nav>
-
-      </div>
-    </header>
-
-    <div class="header-bg"><!--header background div--></div>
-
+	<nav class="uk-navbar">
+        <img src="images/logo-menu.png" class="uk-visible-small" data-uk-offcanvas="{target:'#myid'}"/>
         
-
-
-    <main class="page-content" aria-label="Content">
-      
-      <div class="wrapper">        
+        <a class="uk-navbar-brand uk-block-secondary uk-padding-remove uk-hidden-small">
+        	<img src="images/logo-menu.png"/>
+        </a>
+        
+        <div class="uk-container uk-container-center uk-flex uk-flex-space-between uk-block-secondary uk-hidden-small">
+		            
+            <ul class="uk-navbar-nav uk-flex uk-flex-middle" >
+				<li><a href="#" class="uk-navbar-brand">Acceuil</a></li>
+				<li><a href="#">Pédagogie</a></li>
+				<li><a href="#">Concours d'accés</a></li>
+				<li data-uk-modal="{target:'#my-id3',bgclose:false}">
+       	  			<a href="" data-uk-modal="{target:'#my-id3'}">Multimédia</a>
+          			<div id="my-id3" class="uk-modal">
+   			  			<div class="uk-modal-dialog">
+       			  			<a class="uk-modal-close uk-close"></a>
+    
+       			  			<div class="uk-slidenav-position" data-uk-slideshow="{autoplay:true, kenburns:true, autoplayInterval:5000, start:1}">
+   						 		<ul class="uk-slideshow" data-uk-slideshow="{animation: 'random-fx'}"><!--scale-->
+       						 		<li>
+                                    	<video controls>
+                                        	<source src="images/videosite.mp4" type="video/mp4"/>
+                                        </video>
+                                     </li>
+       						 		<li><img src="images/3.jpg" width="700px" height="500px" alt=""></li>
+                				    <li><img src="images/1.jpg" width="700px" height="500px" alt=""></li>
+    							</ul>
+    							<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+   					   			<a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+							</div>
+                                
+   			  			</div>
+           			</div>
+                </li>
+				<li><a href="#">Ateliers</a></li>
+				<li><a href="#">Evénements</a></li>
+				<li><a href="#">Documents</a></li>
+				<li><a href="#">L'association</a></li>
+				<li><a href="#">Formation continue</a></li>
+			</ul>
+		</div>
+	</nav>
      
+ <div id="myid" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+		<ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+			<li class="uk-nav-header uk-active"><a href="#">Acceuil</a></li>
+			<li class="uk-parent uk-nav-divider">
+            	<a href="#">Pédagogie</a>
+                <ul class="uk-nav-sub">
+            		<li class="uk-nav-header"><a href="#">Supports de cours</a></li>
+            		<li class="uk-nav-divider"><a href="#">Diaporama & didacticiel</a></li>
+        		</ul>                
+            </li>
+			<li class="uk-nav-divider"><a href="#">Concours d'accés</a></li>
+			<li class="uk-nav-divider"><a href="#">Evénements</a></li>
+			<li class="uk-nav-divider"><a href="#">Ateliers</a></li>
+			<li class="uk-nav-divider"><a href="#">Multimédia</a></li>
+			<li class="uk-nav-divider"><a href="#">L'association</a></li>
+			<li class="uk-nav-divider"><a href="#">Formation continue</a></li>
+			<li id="my-id" class="uk-parent uk-nav-divider uk-position-relative" data-uk-dropdown>
+            <a href="#">Documents</a>
+            	<div class="uk-dropdown uk-dropdown-navbar">  
+    				<ul class="uk-nav uk-nav-navbar uk-flex uk-flex-middle">
+     					<li>Documents administratifs</li>
+   	 				</ul>
+				</div>
+            </li>
+		</ul>
+	</div>
+ </div>
+	
+ <header class="uk-text-center uk-text-middle uk-margin-large">
+	<h1 class="uk-margin-large uk-hidden-small" style="font-family: 'Vollkorn', serif;">Master Informatique Appliqué au développement Offshore</h1>
+    <h3 class="uk-text-bold uk-margin-large uk-visible-small"> Master Informatique Appliqué au développement Offshore</h3>
+  </header>
+<!--                
+END OF HEADER      
+
+
+    font-family: 'Vollkorn', serif;
+
+    font-family: 'Abril Fatface', cursive;
+
+    font-family: 'Cantarell', sans-serif;
+
+    font-family: 'Lato', sans-serif;
+
+    font-family: 'Rokkitt', serif;
+
         
-  <ul class="post-list">
-    
-      <li>
-        <h2 align="center"> <a class="post-link" href="#">Welcome to KoreTex</a></h2>
-      </li>
-      
-    <li>
-        <p><?php echo "test"; ?>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut imperdiet lorem at leo mattis feugiat. Sed in ultricies elit. Aliquam sodales porttitor risus, ac imperdiet eros sodales et. Pellentesque sed mauris ac est rhoncus venenatis. Nullam pharetra et lacus at bibendum. Quisque dapibus, sapien ac eleifend varius, augue nulla ultrices augue, at aliquam arcu diam in orci. Donec sit amet euismod libero. In ut ipsum non dolor dignissim egestas sit amet eu orci. Duis bibendum mollis mi, et finibus est cursus nec. Morbi molestie gravida lorem ut lobortis. Nulla nec laoreet elit. Phasellus vehicula eu urna et consequat. Vivamus et imperdiet augue. Aenean tellus turpis, lobortis et neque ut, lobortis consectetur sapien. Proin bibendum arcu nec lorem interdum dignissim. 
-        </p>
-    </li>
-    <li>
-        <p>Praesent suscipit finibus quam nec sagittis. Etiam in urna urna. Mauris mollis dignissim est in venenatis. Donec imperdiet ac arcu ut lobortis. Proin laoreet quam sit amet enim laoreet vehicula. Curabitur in tellus ac felis elementum hendrerit. Praesent placerat varius eleifend. Nam pellentesque vulputate dolor, eget rutrum massa sagittis at. Maecenas pharetra, dolor eget consectetur suscipit, nibh elit semper velit, sed bibendum nulla turpis sed neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed quis metus egestas, suscipit ex ut, rhoncus turpis. Cras vehicula massa nec urna sagittis tristique. 
-        </p>
-    </li>
-    <li>
-        <p>Aliquam egestas velit quam, a vulputate erat vulputate et. Proin est sapien, euismod ut ex in, blandit congue elit. Etiam interdum erat a justo cursus scelerisque. In rhoncus elit ac enim imperdiet, suscipit iaculis purus congue. Quisque accumsan, felis sed mollis bibendum, massa mauris volutpat lectus, ac malesuada orci urna porttitor mauris. Aenean ornare orci vitae nibh lobortis dictum. Cras lobortis lorem sem, quis accumsan nisi eleifend ac. 
-        </p>
-    </li>
-    
-  </ul>
+ -->
+</header>
 
 
+<div class="uk-grid uk-grid-match">
+			
+
+<div class="uk-width-1-1 uk-padding-remove uk-margin-large">
+	
+	<div class="uk-panel uk-panel-hover uk-padding-remove">
+		<div class="uk-panel-header"><h3 class="uk-panel-title uk-icon-home uk-icon-medium"> Objectifs et Débouchés </h3></div>
+		<p class="uk-text-justify">Le Master IADO repose sur des modules d'informatique avancée en Génie Logiciel
+           et des techniques de traitement de l'information. 
+          Cet enseignement est complété par des modules d'ouverture et par des modules 
+          spécialisés du parcours Ingénierie de Développement Logiciel. L’équipe pédagogique 
+          du master est constituée de compétences locales, de collègues français du réseau OTI 
+          (Offshoring des Technologie de l’Information) et de partenaires socio-économiques.<br />
+          Le Master IADO est une formation débouchant sur des emplois de niveau ingénieur et 
+          chef de projet en informatique.  Les titulaires de ce master trouvent principalement 
+          des emplois dans les fonctions d'encadrement du monde professionnel de l'informatique 
+          et des Nouvelles Technologies de l’Information. L'ensemble des compétences délivrées par 
+          cette formation fait des futurs diplômés des collaborateurs recherchés par les entreprises. 
+          Les lauréats peuvent également poursuivre leurs études en Doctorat.
+         </p>
+	</div>	
+</div>
+
+<div class="uk-width-large-1-1 uk-width-medium-1-1 uk-margin uk-padding-remove">
+	<div class="uk-grid uk-grid-collapse" data-uk-grid-match="{target:'.uk-panel'}">	
+		<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-panel uk-panel-hover uk-panel-space" data-uk-scrollspy="{cls:'uk-animation-slide-left', repeat: true, delay:500}">
+			<div class="uk-panel-header"><h3 class="uk-panel-title uk-icon-calendar uk-icon-medium"> Programme </h3></div>
+			<p class="uk-text-justify">		
+            M1	 :  Algorithmique et programmation avancée<br />
+			M2	 :  Apprentissage Machine<br />
+			M3	 :  Programmation Web<br />
+			M4	 :  Programmation Objet avancée<br /> 
+			M5	 :  Techniques de communication et langues<br /> 
+			M6	 :  Management et entreprenariat<br /><br />
+			M7	 :  Architecture et Framework JEE<br />
+			M8	 :  Systèmes embarquées<br />
+			M9	 :  Sécurité et Administration réseaux<br /> 
+			M10	: Préparation au contexte de l’Offshore<br />
+			M11	: Techniques d’optimisation<br />
+			M12	: Bases de données avancées<br /><br />
+			M13	: Intelligence artificielle<br />
+			M14	: Sécurité des systèmes d’information<br /> 
+			M15	: Ingénierie logicielle<br />
+			M16	: Algorithmes stochastiques<br />
+			M17	: Outils et Méthode d’industrialisation<br />
+			M18 : Analyse et gestion de données massives (Big Data)<br /> <br />
+			M19-M24	: Stage en entreprise<br />
+            </p>
+		</div>	
+    
+    	<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-panel uk-panel-hover uk-panel-space" data-uk-scrollspy="{cls:'uk-animation-slide-right', repeat: true, delay:500}">
+			<div class="uk-panel-header"><h3 class="uk-panel-title uk-icon-graduation-cap uk-icon-medium"> Conditions d'accés </h3></div>
+			<p style="line-height: 30px">
+            <b>Diplômes requis :</b> Licence SMI, ou diplôme équivalent sous condition de pré-requis acquis<br />
+			<b>Pré-requis pédagogiques spécifiques :</b> Tous les modules du programme de licence SMI.<br />
+			<b>Procédure de sélection</b> s’effectue en trois étapes : <br />
+			- Inscription en ligne et sélection sur dossier<br /> 
+			- Test en ligne<br />
+			- Entretien
+            </p>
+		</div>	
+	</div>
+</div>
+
+
+
+
+<div class="uk-width-1-1 uk-panel-hover uk-margin uk-padding-remove" data-uk-scrollspy="{cls:'uk-animation-slide-bottom', repeat: true, delay:500}">
+
+	<div class="uk-panel-header"><h3 class="uk-panel-title uk-margin-left uk-icon-cubes uk-icon-medium"></i> Équipe pédagogique du Master IADO </h3></div>
+
+ <div class="uk-grid">	
+        
+    <div class="uk-width-1-1 uk-padding-remove">
+			<ul class="uk-subnav uk-subnav-pill uk-flex uk-flex-center" data-uk-switcher="{connect:'#my-id1', animation: 'uk-animation-fade, uk-animation-slide-left'}">
+    			<li>
+                   <a href=""> Semestre I </a>
+                </li>
+    			<li>
+                   <a href=""> Semestre II </a>
+                </li>
+                <li>
+                	<a href=""> Semestre III </a>
+                </li>
+			</ul>
+	</div>
+        <div class="uk-width-1-1 uk-margin-large uk-padding-remove">
+			<ul id="my-id1" class="uk-switcher">
+    			<li>
+                    <div class="uk-width-large-8-10 uk-width-medium-3-4 uk-width-small-1-1 uk-container-center">
+						<h3 class="uk-flex uk-flex-center uk-panel-title uk-icon-users uk-icon-small"> Semestre I </h3>
+
+						<div class="uk-grid uk-grid-width-medium-1-3  uk-grid-width-small-1-1 uk-panel uk-panel-hover">
+									
+                                                        
+          					<div>
+          						<h4>M1	 : Algorithmique et programmation avancée</h4>
+          						<p ><b>Pr. &nbsp;Belaïd AHIOD</b> : Professeur Habilité</p> 
+          						<h4>M2	 : Apprentissage Machine</h4>
+          						<p ><b>Pr. &nbsp;Noussaima EL KHATTABI</b> : Professeur Assistant</p><br>  
+          					</div>
+          
+          					<div>
+      	  						<h4>M3	 : Programmation Web</h4>
+          						<p ><b>Pr. &nbsp;CHENFOUR Noureddine</b> : Professeur Habilité</p>
+          						<p ><b>Mr. &nbsp;MESRAR Aissam</b> : Ingénieur, Diercteur Technique INNOVIA Information Services, Casablanca </p>     
+          						<h4>M4	 : Programmation Objet avancée</h4>
+          						<p><b>Pr. &nbsp;RAOUI Younes</b> : Professeur Assistant</p> 
+          						<p ><b>Mr. &nbsp;ENNACIRI Mohammed</b> : Ingénieur, CGI, Technopolis, Rabat</p><br> 
+          					</div>
+          
+          					<div>
+          						<h4>M5	 : Techniques de communication et langues</h4>
+          						<p><b>Pr. &nbsp;BOUSSAID Fatima</b> : Professeur de l'Enseignement Supérieur</p> 
+          						<p><b>Pr. &nbsp;CHELLABI Amal</b> : Professeur (Développement personnel)</p> 
+          						<h4>M6	 : Management et entreprenariat</h4>
+          						<p><b>Pr. &nbsp;ZAMMAR Rachid</b> : Professeur Assistant</p>
+          				</div>  
+                                      				
+                        </div>
+					</div>
+                </li>
+                
+    			<li>
+                	<div class="uk-width-large-8-10 uk-width-medium-4-5 uk-width-small-1-1 uk-container-center">
+						<h3 class="uk-flex uk-flex-center uk-panel-title uk-icon-users uk-icon-small"> Semestre II </h3>
+
+						<div class="uk-grid uk-grid-width-medium-1-3 uk-grid-width-small-1-1 uk-panel uk-panel-hover">	
+                        
+                        
+                         <div>
+								<h4>M7	 : Architecture et Framework JEE</h4>
+          						<p><b>Pr. &nbsp;EL BENANI Bouâzza</b> : Professeur Habilité</p>
+                                
+                            	<h4>M8	 : Architectures avancée &amp; Systèmes embarquées</h4>
+          			            <p><b>Pr. &nbsp;EL IMRANI Abdelhakim Ameur</b> : Professeur de l'Enseignement Supérieur</p>
+          						<p><b>Pr. &nbsp;RAOUI Younes</b> : Professeur Assistant</p><br>
+                                                                   
+          					</div>
+          
+          					<div>
+          					    <h4>M9	 : Sécurité et Administration réseaux</h4>
+        						<p><b>Pr. &nbsp;JEDRA Mohamed</b> : Professeur de l'Enseignement Supérieur</p>  
+          						<p><b>Pr. &nbsp;CHOGDALI Khalid</b> : Professeur Assistant</p>                         
+                         
+          						<h4>M10	 :Préparation au contexte de l’Offshore</h4>
+          						<p><b>Pr. &nbsp;SALIOU Philippe</b> : Maitre de Conférences</p>  
+          						<p><b> Mr. &nbsp;OLEO François</b> : Ingénieur, Expert consultant </p> 
+          						<p><b>Mr. &nbsp;AIT ADDI Youssef</b> : Ingénieur test et validation Visiativ/Alliativ Maroc</p> 
+          						<p><b>Mr. &nbsp;ZNAGUI Akram</b> : Ingénieur, Groupement pour un système Interbancaire Marocain de télécompensation</p><br>
+                                
+          					</div>
+          
+          					<div>
+                                <h4>M11	 : Techniques d’optimisation</h4>
+          						<p><b>Pr. &nbsp;EL KADIRI Mohamed</b> : Professeur de l'Enseignement Supérieur</p>  
+            					<p><b>Pr. &nbsp;ESSAQOTE Hafida</b> : Professeur Assistant</p>  
+                                
+          						<h4>M12	 : Bases de données avancées</h4>
+          						<p><b>Pr. &nbsp;EL BELKACEMI Mourad</b> : Professeur de l'Enseignement Supérieur</p>  
+          						<p><b>Mr. &nbsp;EL HAMDAOUI ZAKARIA</b> : BMCE, Certifié Oracle OCP.</p> 
+          						<p><b>M. &nbsp;ZEBDI Fatima-Zahra</b> : Cadre supérieure, Ministère de l’énergie et des mines.</p>
+          					</div> 
+                        
+                        
+                        
+					    </div>
+					</div>
+                </li>
+                
+                <li>
+                	<div class="uk-width-large-8-10 uk-width-medium-4-5 uk-width-small-1-1 uk-container-center">
+						<h3 class="uk-flex uk-flex-center uk-panel-title uk-icon-users uk-icon-small"> Semestre III </h3>
+
+						<div class="uk-grid uk-grid-width-medium-1-3  uk-grid-width-small-1-1 uk-panel uk-panel-hover">
+                        
+                            <div>
+          						<h4>M13	 : Intelligence artificielle</h4>
+          						<p><b>Pr. &nbsp;IDRISSI Abdellah</b> : Professeur Assistant</p>  
+                                
+          						<h4>M14	 : Sécurité des systèmes d’information</h4>
+          						<p><b>Pr. &nbsp;OMARY Fouzia</b> : Professeur de l'Enseignement Supérieur</p><br>                                
+          					</div>
+          
+          					<div>
+          						<h4>M15	 : Ingénierie logicielle</h4>
+          						<p><b>Pr. &nbsp;ZITI Soumia</b> : Professeur Assistant</p>
+                                                            
+           						<h4>M16	 : Algorithmes stochastiques</h4>
+          						<p ><b>Pr. &nbsp;EL IMRANI Abdelhakim Ameur</b> : Professeur de l'Enseignement Supérieur</p>  
+          						<p ><b>Pr. &nbsp;Belaïd AHIOD</b> : Professeur Habilité</p><br>   
+          					</div>
+          
+          					<div>                                 
+          						<h4>M17	 : Outils et Méthode d’industrialisation</h4>
+          						<p><b>Mr. &nbsp;MIHAMOU Abderrazaq </b> : Directeur général du groupe Eclisse</p>
+          						<p><b>Mr. &nbsp;SALIHOUN MOHAMED</b> : Formateur certifié</p>  
+          						<p><b>Mr. &nbsp;BERDOUL YOUSSEF</b> : Ingénieur, CGI, Technopolis, Rabat</p>                                  
+                                
+          						<h4>M18	 : Analyse et gestion de données massives (Big Data)</h4>
+          						<p><b>Pr. &nbsp;EL BENANI Bouâzza</b> : Professeur Habilité</p> 
+          						<p><b>Mr. &nbsp;EL HAMDAOUI ZAKARIA</b> : BMCE, Certifié Oracle OCP.</p> 
+          					</div> 
+                        
+					    </div>
+					</div>
+                </li>
+			</ul>
+      </div>
+		
+ </div>		
+
+
+</div>
+
+
+
+
+
+
+
+
+
+	<div class="uk-width-1-1 uk-padding-remove" data-uk-scrollspy="{cls:'uk-animation-scale-up', repeat: true, delay:900}">
+   		
+        <div class="uk-panel-header"><h3 class="uk-panel-title uk-margin-left uk-icon-envelope-square uk-icon-medium">&nbsp;&nbsp;&nbsp;Nous Contacter !</h3></div>
+
+        
+        <div class="uk-grid uk-padding-remove">
+        	<div class="uk-width-medium-1-2 uk-width-small-1-1 uk-padding-remove">
+			 <table>
+				<colgroup>
+				<col style="width: 20%">
+				<col style="width: 80%">
+				</colgroup>
+				  <tr>
+				    	<td><h1 class="uk-icon-hand-o-right"></h1></td>
+				    	<td>
+				    		<p><b style="font-size:13px; font-weight:750">Coordonnateur Master :</b>Pr.&nbsp;Abdelhakim A. EL IMRANI</p>
+				    		<p class="uk-icon-envelope"><b>&nbsp;E-mail :</b>&nbsp;elimrani@fsr.ac.ma</p>
+				    	</td>
+				  </tr>
+                  
+				  <tr>
+				    <td><h1 class="uk-icon-hand-o-right"></h1></td>
+				    <td>
+				    <p><b>Responsable S1 : </b>Pr. &nbsp;Belaïd AHIOD</p>
+				    <p class="uk-icon-envelope"><b>&nbsp;E-mail :</b>&nbsp;ahiod@fsr.ac.ma</p>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td><h1 class="uk-icon-hand-o-right"></h1></td>
+				    <td>
+				    <p><b>Responsable S2 : </b>Pr. &nbsp;Bouazza EL BENANI</p>
+				    <p class="uk-icon-envelope"><b>&nbsp;E-mail :</b>&nbsp;elbenani@hotmail.com</p>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td><h1 class="uk-icon-hand-o-right"></h1></td>
+				    <td>
+				    <p><b>Responsable S3 : </b>Pr. &nbsp;Fouzia OMARY</p>
+				    <p class="uk-icon-envelope"><b>&nbsp;E-mail :</b>&nbsp;omary@fsr.ac.ma</p>
+				    </td>
+				  </tr>
+				</table>
+            </div>
+        	<div class="uk-width-medium-1-2 uk-width-small-1-1 uk-padding-remove">
+                    <button onclick="getLocation()" class="uk-button uk-align-center" type="button" data-uk-button style="border: solid 1px #CCC; border-radius: 15px;">directions</button>
+                    <p id="demo"></p>
+                    <div class="uk-align-center" id="mapholder">
+                    </div>
+  
+            </div>            
         </div>
-        
-
-
-
-<div class="second-bg"><!-- 2nd background div--></div>
-  <div class="wrapper">
-
-
-
-
-    <p>Sed sit amet sem pharetra, ultricies sem eu, dapibus ex. Duis suscipit ullamcorper lacus, blandit commodo arcu hendrerit non. Duis ac suscipit nunc. Nulla facilisi. Aenean sed ullamcorper tellus, eget faucibus orci. Quisque volutpat nulla neque, id cursus elit rutrum eu. Nullam molestie, odio non elementum eleifend, odio eros pretium neque, quis volutpat sapien enim ut risus. Proin blandit interdum magna id vestibulum. Vestibulum pellentesque tellus non tincidunt venenatis. Donec interdum, augue a pretium hendrerit, orci erat congue velit, in tristique ex enim in elit. Integer neque lectus, malesuada eu nunc quis, venenatis feugiat sapien. Duis at tristique eros. Nam eleifend eros quis semper faucibus. 
-    </p>
-
-
-
-
-
-   </div>
-</main>
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">KoreTex</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>Mouhcine Khalid</li>
-          <li>
-            <a href="#"><span class="icon--email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg>
-</span><span class="username">khalid.mouhcine9@gmail.com</span></a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          
-          <li>
-            <a href="https://github.com/jekyll"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
-</span><span class="username">jekyll</span></a>
-
-          </li>
-          
-
-          
-          <li>
-            <a href="https://twitter.com/jekyllrb"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</span><span class="username">jekyllrb</span></a>
-
-          </li>
-          
-          <li>
-            <a href="https://facebook.com"><span class="icon icon--facebook"><svg viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"/></svg>
-</span><span class="username">facebook</span></a>
-
-          </li>
-
-
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</p>
-      </div>
     </div>
 
-  </div>
+</div>
 
+	
+<footer class="uk-container uk-container-center uk-block uk-block-secondary">
+	
+    <div class="uk-grid uk-grid-width-1-3 uk-grid-match uk-hidden-small" data-uk-grid-match>
+			
+        	<ul class="contact uk-padding-remove">
+				
+            	<h1 class="uk-h2 uk-text-center">Master IADO 2017</h1>
+				<li>
+                	<p> Conception et Réalisation</p>
+
+                	<dl>
+                    
+ 					 	<dt class="uk-align-left" style="color:black">Mouhcine Khalid</dt>
+                        
+                        <dt class="uk-align-right" style="color:black">Samai Mohammed</dt>
+                	
+                    </dl>
+                </li>
+				<li>
+                	<a href="#">
+                		<span class="icon--email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg></span>
+             		khalid.mouhcine@gmail.com</a></li>
+             	<li>
+                	<a href="#">
+                		<span class="icon--email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg></span>
+                    samai.maroc@gmail.com
+                    </a>
+                </li>
+                 
+			</ul> 
+          
+			<ul class="follow  uk-text-center uk-padding-remove">
+          
+          		<h1 class="uk-h2">Suivez-Nous</h1>
+                
+	            <li>
+                
+	            	<a class="uk-icon-facebook uk-icon-hover" href="https://facebook.com">   facebook</a>
+                
+                	<a class="uk-icon-twitter uk-icon-hover uk-margin-left" href="https://twitter.com/"> twitter</a>
+
+	          	</li>
+                                
+        	</ul>
+            
+			<ul class="liens uk-padding-remove">
+            
+				<h1 class="uk-h2 uk-text-center">Liens Utiles</h1>
+                
+				<li><a href="http://www.fsr.ac.ma/">Faculté des Sciences RABAT</a></li>
+					
+                <li><a href="http://www.um5a.ac.ma/">Université Mohamed V </a></li>
+					
+                <li><a href="http://www.enssup.gov.ma/">Ministère de l'Enseignement supérieur</a></li>
+				
+            </ul>              
+            
+	</div>
+	
+     
+   <div class="uk-grid uk-grid-width-small-1-3 uk-padding-remove uk-visible-small">
+    
+	    <div class="uk-position-relative uk-padding-remove uk-margin-bottom" data-uk-dropdown="{mode:'click',pos:'top-center'}">
+
+    
+    		<div>
+    			<h1 class="uk-h2 uk-text-center">Master IADO 2017</h1>
+    		</div>
+
+    
+    		<div class="uk-dropdown">
+
+				<dl>
+ 					 <dt style="color:black">Conception</dt>
+ 					 	<dd class="uk-margin-left">Mouhcine Khalid</dd>
+                        <dd class="uk-margin-left">Samai Mohammed</dd>
+ 					 <dt style="color:black"><span class="icon--email"><svg viewBox="0 0 512 512"><path d="M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z"/></svg></span>E-mail</dt>
+ 					 	<dd>
+                			<a href="#">khalid.mouhcine@gmail.com</a>                        
+                        </dd>
+                        <dd>
+                     		<a href="#">samai.maroc@gmail.com</a>
+                        </dd>                     
+			    </dl>                
+
+    		</div>
+
+		</div>
+        
+        
+	    <div class="uk-position-relative uk-padding-remove uk-margin-bottom" data-uk-dropdown="{mode:'click',pos:'top-center'}">
+
+    
+    		<div>
+    			<h1 class="uk-h2 uk-text-center">Suivez-Nous</h1>
+    		</div>
+
+    
+    		<div class="uk-dropdown">
+            	<dl>
+                	<dt>
+                    	<a class="uk-icon-facebook uk-icon-hover uk-align-left" href="https://facebook.com">  facebook</a>
+	            		<a class="uk-icon-twitter uk-icon-hover uk-align-right" href="https://twitter.com/">   twitter</a>
+                    </dt>
+                </dl>
+                
+    		</div>
+
+		</div>
+
+	    <div class="uk-position-relative uk-padding-remove uk-margin-bottom" data-uk-dropdown="{mode:'click',pos:'top-center'}">
+
+    
+    		<div>
+    			<h1 class="uk-h2 uk-text-center">Liens Utiles</h1>
+    		</div>
+
+    
+    		<div class="uk-dropdown">
+            	<dl>
+                	<dt><a href="http://www.fsr.ac.ma/">Faculté Sciences RABAT</a></dt>
+                    <dt><a href="http://www.um5a.ac.ma/">Université Mohamed V </a></dt>
+                    <dt><a href="http://www.enssup.gov.ma/">M. Enseignement supérieur</a></dt>
+                </dl>
+                
+    		</div>
+
+		</div>
+
+	</div>
+  
 </footer>
 
-
-  </body>
-
+</body>
 </html>
