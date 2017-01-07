@@ -9,7 +9,7 @@ body {
 #mapholder
 {
 	border: solid 1px #CCC; 
-	border-radius: 5px;
+	border-radius: 15px 50px 30px;
 }
 
 nav[class="uk-navbar"] > img[class="uk-visible-small"]
