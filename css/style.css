@@ -75,6 +75,11 @@ nav[class="uk-navbar"]{
 	background-color: #FFF;
 }
 
+
+
+
+
+
 @media screen and (max-width: 980px) 
 {
     .uk-grid{
@@ -85,7 +90,11 @@ nav[class="uk-navbar"]{
 }
 
 
-@media screen and (max-width: 875px) and (min-width: 768px)
+
+
+
+
+@media screen and (max-width: 875px) and (min-device-width: 768px)
  {
 	 
 .contact > li > a, .liens > li > a
@@ -100,10 +109,7 @@ nav[class="uk-navbar"]{
  
 }
 
-  @media screen and (max-width: 650px) and (device-width: 320px) 
-  and (device-height: 640px) 
-  and (-webkit-device-pixel-ratio: 3) 
-  and (orientation: portrait)
+  @media screen and (min-device-width: 320px) 
  {
 	 
 h1[class="uk-h2 uk-text-center"]
